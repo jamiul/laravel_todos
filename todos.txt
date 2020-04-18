@@ -1,0 +1,4 @@
+create model
+create controller
+create blade files
+create route
