@@ -22,6 +22,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-10">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/tasks">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">Todo List</li>
+                    </ol>
+                  </nav>
                 <h3 class="" style="margin-top: 20px">Todo List</h2>
                 <a href="{{route('new.task')}}" class="badge badge-info"
                     style="

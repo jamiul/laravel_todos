@@ -22,6 +22,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/tasks">Home</a></li>
+                      <li class="breadcrumb-item active" aria-current="page">New Task</li>
+                    </ol>
+                  </nav>
                 <h3>Tasks</h3>
                 @if ($message = Session::get('success'))
                 <div class="alert alert-info alert-dismissible fade show" role="alert">
