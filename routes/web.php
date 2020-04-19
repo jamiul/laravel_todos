@@ -25,3 +25,6 @@ Route::get('/tasks/{todos}/edit','TodoController@edit');
 Route::post('/tasks/{todos}/edit','TodoController@update');
 
 Route::get('/tasks/{todos}/delete','TodoController@delete');
+
+Route::post('/tasks/{todo}/complete','TodoController@complete')->name('tasks.complete');
+Route::post('/tasks/{todo}/incomplete','TodoController@incompete')->name('tasks.incomplete');

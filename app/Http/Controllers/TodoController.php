@@ -10,7 +10,7 @@ class TodoController extends Controller
     // fetch all todos
     public function index()
     {
-        $todos = Todo::all();
+        $todos = Todo::orderBy('complete')->get();
         return view('todos.index', compact('todos'));
     }
 
@@ -51,5 +51,20 @@ class TodoController extends Controller
     {
         $todos->delete();
         return redirect()->back()->with('success', 'Task Deleted Successfully');
+    }
+
+    // task mark as completed
+    public function complete(Todo $todo)
+    {
+        $todo->update(['complete' => true]);
+        return redirect()->back()->with('success', 'Task Mark as Completed');
+    }
+
+    // task mark as incompeted
+    public function incompete(Todo $todo)
+    {
+        $todo->update(['complete' => false]);
+        return redirect()->back()->with('success', 'Task Mark as Incompeted');
+
     }
 }
