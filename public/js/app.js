@@ -66016,6 +66016,7 @@ var App = /*#__PURE__*/function (_Component) {
 
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.renderTasks = _this.renderTasks.bind(_assertThisInitialized(_this));
     return _this;
   } // end constructor
   // handle change method
@@ -66050,6 +66051,38 @@ var App = /*#__PURE__*/function (_Component) {
           title: ""
         });
       });
+    } // render tasks
+
+  }, {
+    key: "renderTasks",
+    value: function renderTasks() {
+      return this.state.tasks.map(function (task) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: task.id,
+          className: "media"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "media-body"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, task.title)));
+      });
+    } // get all tasks from backend
+
+  }, {
+    key: "getTasks",
+    value: function getTasks() {
+      var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/todos').then(function (response // console.log(response.data.tasks)
+      ) {
+        return _this3.setState({
+          tasks: _toConsumableArray(response.data.tasks)
+        });
+      });
+    } // lifecycle method
+
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.getTasks();
     }
   }, {
     key: "render",
@@ -66081,7 +66114,7 @@ var App = /*#__PURE__*/function (_Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary"
-      }, "Create Task")))))));
+      }, "Create Task")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.renderTasks())))));
     }
   }]);
 
