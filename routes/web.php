@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -28,3 +28,10 @@ Route::get('/tasks/{todos}/delete','TodoController@delete');
 
 Route::post('/tasks/{todo}/complete','TodoController@complete')->name('tasks.complete');
 Route::post('/tasks/{todo}/incomplete','TodoController@incompete')->name('tasks.incomplete');
+
+
+Route::get('/', function () {
+    return view('front.home');
+});
+
+Route::resource('todos','Api\TaskController');
