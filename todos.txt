@@ -1,4 +1,2 @@
-create model
-create controller
-create blade files
-create route
+1. create search js file
+

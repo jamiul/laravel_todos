@@ -65852,11 +65852,11 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+// require('./components/Example');
+// require('./components/Task');
 
 
-__webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.js");
-
-__webpack_require__(/*! ./components/Task */ "./resources/js/components/Task.js");
+__webpack_require__(/*! ./components/Search */ "./resources/js/components/Search.js");
 
 /***/ }),
 
@@ -65905,10 +65905,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Example.js":
-/*!********************************************!*\
-  !*** ./resources/js/components/Example.js ***!
-  \********************************************/
+/***/ "./resources/js/components/Search.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Search.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -65918,61 +65918,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-function Example() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row justify-content-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "col-md-8"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-header"
-  }, "Example Component"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "card-body"
-  }, "I'm an example component!")))));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Example);
-
-if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Example, null), document.getElementById('example'));
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/Task.js":
-/*!*****************************************!*\
-  !*** ./resources/js/components/Task.js ***!
-  \*****************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -65996,97 +65942,75 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+var people = [{
+  id: 1,
+  name: "Alam",
+  age: 23
+}, {
+  id: 2,
+  name: "Rifat",
+  age: 20
+}, {
+  id: 3,
+  name: "Rubel",
+  age: 33
+}, {
+  id: 4,
+  name: "Sadman",
+  age: 19
+}, {
+  id: 5,
+  name: "Nahid",
+  age: 35
+}, {
+  id: 6,
+  name: "Nayeem",
+  age: 22
+}, {
+  id: 7,
+  name: "Rayeem",
+  age: 14
+}];
 
+function searchingFor(term) {
+  return function (x) {
+    return x.name.toLowerCase().includes(term.toLowerCase()) || !term;
+  };
+}
 
-var App = /*#__PURE__*/function (_Component) {
-  _inherits(App, _Component);
+var Search = /*#__PURE__*/function (_Component) {
+  _inherits(Search, _Component);
 
-  var _super = _createSuper(App);
+  var _super = _createSuper(Search);
 
-  function App() {
+  function Search(props) {
     var _this;
 
-    _classCallCheck(this, App);
+    _classCallCheck(this, Search);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
-      title: "",
-      tasks: []
-    }; // bind method
-
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.renderTasks = _this.renderTasks.bind(_assertThisInitialized(_this));
+      people: people,
+      term: ''
+    };
+    _this.searchHandaler = _this.searchHandaler.bind(_assertThisInitialized(_this));
     return _this;
-  } // end constructor
-  // handle change method
+  } // search handaler method
 
 
-  _createClass(App, [{
-    key: "handleChange",
-    value: function handleChange(e) {
+  _createClass(Search, [{
+    key: "searchHandaler",
+    value: function searchHandaler(event) {
       this.setState({
-        title: e.target.value
+        term: event.target.value
       });
-    } // handle the submit method
-
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this2 = this;
-
-      // stop browser's default behaviour of reloading on form submit
-      e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/todos", {
-        title: this.state.title
-      }).then(function (response) {
-        console.log("from handle submit", response); // set state
-
-        _this2.setState({
-          tasks: [response.data].concat(_toConsumableArray(_this2.state.tasks))
-        }); // then clear the value of textarea
-
-
-        _this2.setState({
-          title: ""
-        });
-      });
-    } // render tasks
-
-  }, {
-    key: "renderTasks",
-    value: function renderTasks() {
-      return this.state.tasks.map(function (task) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: task.id,
-          className: "media"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "media-body"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, task.title)));
-      });
-    } // get all tasks from backend
-
-  }, {
-    key: "getTasks",
-    value: function getTasks() {
-      var _this3 = this;
-
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/todos').then(function (response // console.log(response.data.tasks)
-      ) {
-        return _this3.setState({
-          tasks: _toConsumableArray(response.data.tasks)
-        });
-      });
-    } // lifecycle method
-
-  }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {
-      this.getTasks();
     }
   }, {
     key: "render",
     value: function render() {
+      var _this$state = this.state,
+          term = _this$state.term,
+          people = _this$state.people;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66097,31 +66021,28 @@ var App = /*#__PURE__*/function (_Component) {
         className: "card"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
-      }, "Create Task"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Search Student"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        onChange: this.handleChange,
-        value: this.state.title,
-        className: "form-control",
-        rows: "5",
-        maxLength: "255",
-        placeholder: "Create a new task",
-        required: true
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary"
-      }, "Create Task")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), this.renderTasks())))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        onChange: this.searchHandaler,
+        value: term
+      })), people.filter(searchingFor(term)).map(function (person) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          key: person.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, person.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, person.age));
+      }))))));
     }
   }]);
 
-  return App;
+  return Search;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null), document.getElementById("task"));
+/* harmony default export */ __webpack_exports__["default"] = (Search);
+
+if (document.getElementById("search")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Search, null), document.getElementById("search"));
+}
 
 /***/ }),
 
