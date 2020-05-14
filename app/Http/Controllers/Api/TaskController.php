@@ -15,7 +15,7 @@ class TaskController extends Controller
      */
     public function index(Todo $todos)
     {
-         $todos = Todo::all();
+        $todos = Todo::all();
         // return $todos;
         return response()->json([
             'tasks' => $todos
@@ -66,7 +66,8 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Todo::findOrFail($id);
+        return $todo;
     }
 
     /**
@@ -76,9 +77,10 @@ class TaskController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Todo $todo)
     {
-        //
+        $todo->update($request->all());
+        return response()->json($todo->id);
     }
 
     /**
@@ -89,6 +91,6 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $task = Todo::findOrFail($id)->delete();
     }
 }

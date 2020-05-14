@@ -14,4 +14,5 @@ require('./bootstrap');
 
 // require('./components/Example');
 // require('./components/Task');
-require('./components/Search');
+// require('./components/Search');
+require('./index');

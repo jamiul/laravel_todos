@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-class App extends Component {
+export default class Task extends Component {
     constructor() {
         super();
         this.state = {
@@ -13,6 +13,8 @@ class App extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderTasks = this.renderTasks.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     } // end constructor
 
     // handle change method
@@ -47,26 +49,58 @@ class App extends Component {
         return this.state.tasks.map(task => (
             <div key={task.id} className="media">
                 <div className="media-body">
-                    <p>{task.title}</p>
+                    <p>
+                        {task.title}{" "}
+                        <Link
+                            className="btn btn-sm btn-success"
+                            to={`/${task.id}/edit`}
+                        >
+                            Edit
+                        </Link>
+                        <button
+                            onClick={() => {
+                                window.confirm(
+                                    "Are you sure you wish to delete this item?"
+                                ) && this.handleDelete(task.id);
+                            }}
+                            className="btn btn-sm btn-danger float-right"
+                        >
+                            Delete
+                        </button>
+                    </p>
                 </div>
             </div>
         ));
     }
     // get all tasks from backend
     getTasks() {
-        axios.get('/todos').then((
-            response // console.log(response.data.tasks)
-        ) =>
+        axios.get("/todos").then(response => {
+            console.log("get posts", response.data);
             this.setState({
                 tasks: [...response.data.tasks]
-            })
-        );
+            });
+        });
     }
     // lifecycle method
     componentWillMount() {
         this.getTasks();
     }
 
+    // handle delete
+    handleDelete(id) {
+        // remove from local state
+        const isNotId = task => task.id !== id;
+        const updatedTasks = this.state.tasks.filter(isNotId);
+        this.setState({ tasks: updatedTasks });
+        // make delete request to the backend
+        axios.delete(`/todos/${id}`);
+    }
+    // handle update
+    handleUpdate(id) {
+        axios.put(`/todos/${id}`).then(response => {
+            this.getTasks();
+        });
+    }
     render() {
         return (
             <div className="container">
@@ -104,5 +138,3 @@ class App extends Component {
         );
     }
 }
-
-ReactDOM.render(<App />, document.getElementById("task"));
