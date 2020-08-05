@@ -16,3 +16,4 @@ require('./bootstrap');
 // require('./components/Task');
 // require('./components/Search');
 require('./index');
+require('./File');

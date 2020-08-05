@@ -37,3 +37,5 @@ Route::get('/', function () {
 Route::resource('todos','Api\TaskController');
 
 Route::get('/search', 'SearchController@index');
+
+Route::resource('fileupload', 'FileController');
